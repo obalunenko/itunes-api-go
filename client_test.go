@@ -27,7 +27,7 @@ func (m *mockHTTPClient) Do(req *http.Request) (*http.Response, error) {
 	return m.MockDo(req)
 }
 
-func equalITunesLookup(tb testing.TB, want LookupResponse, got LookupResponse) {
+func equalITunesLookup(tb testing.TB, want, got LookupResponse) {
 	tb.Helper()
 
 	assert.Equal(tb, want.ResultCount, got.ResultCount)

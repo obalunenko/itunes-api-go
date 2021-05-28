@@ -87,7 +87,7 @@ func (c client) Lookup(ctx context.Context, id int, opts ...option.LookupOption)
 
 	defer func() {
 		if err := resp.Body.Close(); err != nil {
-			log.Printf("%s: failed to close body", logPfx)
+			log.Printf("%s: failed to close body: %v", logPfx, err)
 		}
 	}()
 
