@@ -15,8 +15,8 @@ enabled = true
 
 [[analyzers]]
 name = "shell"
-enabled = true
+enabled = false
 
 [[transformers]]
 name = "gofmt"
-enabled = true
+enabled = false
