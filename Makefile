@@ -1,4 +1,4 @@
-NAME=itunes-search-go
+NAME=itunes-api-go
 
 SHELL := env VERSION=$(VERSION) $(SHELL)
 VERSION ?= $(shell git describe --tags $(git rev-list --tags --max-count=1))
