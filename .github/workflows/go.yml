@@ -22,8 +22,8 @@ jobs:
       fail-fast: false
       max-parallel: 2
       matrix:
-        os: ['ubuntu-20.04']
-        go: ['1.16']
+        os: ['ubuntu-22.04']
+        go: ['1.20']
     runs-on: ${{ matrix.os }}
     name: Run linters
     steps:
@@ -46,8 +46,8 @@ jobs:
       fail-fast: false
       max-parallel: 2
       matrix:
-        os: ['ubuntu-20.04']
-        go: ['1.16']
+        os: ['ubuntu-22.04']
+        go: ['1.20']
     runs-on: ${{ matrix.os }}
     name: Run Tests
     steps:

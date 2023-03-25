@@ -95,4 +95,3 @@ type Result struct {
 	BundleID                           string        `json:"bundleId"`
 	UserRatingCount                    int64         `json:"userRatingCount"`
 }
-
