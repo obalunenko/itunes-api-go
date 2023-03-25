@@ -5,7 +5,7 @@ package itunes_search_go
 import (
 	"context"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 	"net/url"
@@ -75,7 +75,7 @@ func (c client) Lookup(ctx context.Context, id int, opts ...option.LookupOption)
 
 	uri.RawQuery = v.Encode()
 
-	req, err := http.NewRequest(http.MethodGet, uri.String(), nil)
+	req, err := http.NewRequest(http.MethodGet, uri.String(), http.NoBody)
 	if err != nil {
 		return LookupResponse{}, fmt.Errorf("new request: %w", err)
 	}
@@ -91,7 +91,7 @@ func (c client) Lookup(ctx context.Context, id int, opts ...option.LookupOption)
 		}
 	}()
 
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return LookupResponse{}, fmt.Errorf("read body: %w", err)
 	}
